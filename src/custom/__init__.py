@@ -41,4 +41,4 @@ async def start_ttsg(request_iterator):
 # For voice changers
 async def start_ttsc(request_iterator):
     async for audio_chunk, sample_rate, sample_width, channels in request_unpacker(request_iterator): # receiving chunks of info through a stream
-        raise NotImplementedError
+        yield audio_chunk, sample_rate, sample_width, channels
